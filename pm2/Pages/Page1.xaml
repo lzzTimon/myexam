@@ -1,0 +1,49 @@
+﻿<Page x:Class="pm2.Pages.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:pm2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="Page1">
+
+    <Grid Background="white">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="23*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Корзина-->
+
+
+        <!--Меню-->
+        <ScrollViewer Grid.Row="1" Name="SVGrig">
+            <StackPanel>
+                <DataGrid Name="DGBooks" AutoGenerateColumns="False" CanUserSortColumns="False" HorizontalAlignment="Center" BorderBrush="Transparent">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Initialized="StackPanel_Initialized">
+                                        <MediaElement Width="120" Height="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" Initialized="MediaElement_Initialized"/>
+                                        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Width="620" Margin="5">
+                                            <TextBlock Name="nameBook" Initialized="nameBook_Initialized" Style="{StaticResource forTextBlock}"></TextBlock>
+                                            <TextBlock Name="autorBook" Initialized="autorBook_Initialized" Style="{StaticResource forTextBlock}"></TextBlock>
+                                            <TextBlock Name="priceBook" Initialized="priceBook_Initialized" Style="{StaticResource forTextBlock}"></TextBlock>
+                                            <TextBlock Name="marketBook" Initialized="marketBook_Initialized" Style="{StaticResource forTextBlock}"></TextBlock>
+                                            <TextBlock Name="depotBook" Initialized="depotBook_Initialized" Style="{StaticResource forTextBlock}"></TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Name="buyBtn" Content="Заказать" Margin="15" Style="{StaticResource FunctionButtons}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
